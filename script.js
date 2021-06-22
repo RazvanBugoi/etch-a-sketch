@@ -1,5 +1,6 @@
 document.body.onload = addElements;
-const mainDiv = document.querySelector('div');
+const mainDiv = document.querySelector('.main-div');
+console.log(mainDiv)
 
 function addElements(n) {
   for (let i=0; i<n*n; i++) {
