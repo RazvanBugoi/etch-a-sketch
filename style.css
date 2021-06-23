@@ -28,9 +28,9 @@ body {
     margin-right: 1rem;
 }
 .presetValue {
-    color: #fff;
-    background-color: #0d6efd;
-    border-color: #0d6efd;
+    color: #000;
+    background-color: #0dcaf0;
+    border-color: #0dcaf0;
     margin: .25rem .125rem;
     line-height: 1.5;
     text-align: center;
@@ -49,10 +49,14 @@ button, select {
 }
 
 
-.presetValue:hover {
-    color: #fff;
-    background-color: #0b5ed7;
-    border-color: #0a58ca;
+.presetValue:hover, .presetValue:active {
+    color: #000;
+    background-color: #3dd5f3;
+    border-color: #25cff2;
+}
+
+.presetValue:focus {
+    box-shadow: 0 0 0 0.25rem rgb(11 172 204 / 50%);
 }
 
 .customValues, .submitContainer, .resetContainer {
@@ -80,9 +84,27 @@ form {
 }
 
 .buttonsSameSize {
-    padding: 0.5rem
+    padding: 0.5rem;
+    font-size: 1rem;
+    color: #000;
+    background-color: #ffc107;
+    border-color: #ffc107;
+    cursor: pointer;
+    border: none;
 }
 
+.buttonsSameSize:focus {
+    color: #000;
+    background-color: #ffca2c;
+    border-color: #ffc720;
+    box-shadow: 0 0 0 0.25rem rgb(217 164 6 / 50%);
+}
+
+.buttonsSameSize:hover {
+    color: #000;
+    background-color: #ffca2c;
+    border-color: #ffc720;
+}
 .colorsSection {
     display: inline-flex;
     justify-content: center;
@@ -93,4 +115,61 @@ form {
 
 #selectColor {
     padding: 0.3rem;
+}
+
+#customInput:focus {
+    outline: none;
+    cursor: default;
+}
+
+#customInputLabel, #colorLabel {
+    font-weight: bold;
+}
+
+
+/* Tablet media query */
+
+@media (max-width: 768px) { 
+    body {
+        text-align: center;
+    }
+
+    .main-div {
+        margin-top: 20px;
+        height: 750px;
+        width: 750px;
+        border: 2px solid black;
+        display: grid;
+    }
+
+    .presetValues {
+        max-width: 70%;
+    }
+
+    .drawingTools {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Mobile media query */
+
+@media (max-width: 425px) {
+    .main-div {
+        margin-top: 20px;
+        height: 410px;
+        width: 410px;
+        border: 1px solid black;
+        display: grid;
+    }
+
+    .presetValueText {
+        display: block;
+    }
+
+    .mobileView {
+        display: flex;
+        flex-direction: column;
+    }
 }

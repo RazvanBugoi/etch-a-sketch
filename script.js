@@ -9,7 +9,13 @@ const eighty = document.getElementById('eighty');
 const ninety = document.getElementById('ninety');
 const reset = document.getElementById('resetButton')
 const submitCustomValue = document.getElementById('submit')
+const randomColorButton = document.getElementById('randomColor')
+const preferedColor = document.getElementById('selectColor');
+const inputField = document.getElementById('customInput')
 
+
+
+inputField.focus()
 ten.onclick = addTenGrids;
 twenty.onclick = addTwentyGrids;
 thirty.onclick = addThirtyGrids;
@@ -24,6 +30,8 @@ submitCustomValue.onclick = addCustomNumberGrids;
 submitCustomValue.addEventListener('click', function(event) {
   event.preventDefault();
 })
+randomColorButton.onclick = randomColorDrawing;
+preferedColor.onchange = selectColor;
 
 function addTenGrids() {
   if (mainDiv.innerHTML == '') {
@@ -117,7 +125,7 @@ function addCustomNumberGrids() {
 }
 
 
-// document.body.onload = addElements;
+
 const mainDiv = document.querySelector('.main-div');
 console.log(mainDiv)
 
@@ -139,7 +147,6 @@ function resetGrid() {
 
 function startDrawing() {
   const allGridDivs = document.querySelectorAll('.div-grids')
-  console.log(allGridDivs)
   allGridDivs.forEach((element) => element.addEventListener('mouseenter', function randomColor() {
     const r = Math.floor(Math.random() * 256);
     const g = Math.floor(Math.random() * 256);
@@ -147,9 +154,6 @@ function startDrawing() {
     let finalColor = "rgb(" + r + "," + g + "," + b + ")";
     element.style.backgroundColor = finalColor;
   }))
-  // allGridDivs.forEach((element) => element.addEventListener('mouseenter', () => {
-  //   element.style.backgroundColor = 'black'
-  // }))
 }
 
 
@@ -158,4 +162,17 @@ function randomColor() {
   const g = Math.floor(Math.random() * 256);
   const b = Math.floor(Math.random() * 256);
   let finalColor = "rgb(" + r + "," + g + "," + b + ")";
+}
+
+function randomColorDrawing() {
+  if (mainDiv.innerHTML == '') alert('You have to select a grid size first.')
+  startDrawing()
+}
+
+function selectColor() {
+  if (mainDiv.innerHTML == '') alert('You have to select a grid size first.')
+  const allGridDivs = document.querySelectorAll('.div-grids')
+  allGridDivs.forEach((element) => element.addEventListener('mouseenter', () => {
+    element.style.backgroundColor = `${preferedColor.value}`;
+  }))
 }
