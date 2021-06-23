@@ -7,7 +7,8 @@ const sixty = document.getElementById('sixty');
 const seventy = document.getElementById('seventy');
 const eighty = document.getElementById('eighty');
 const ninety = document.getElementById('ninety');
-
+const reset = document.getElementById('resetButton')
+const submitCustomValue = document.getElementById('submit')
 
 ten.onclick = addTenGrids;
 twenty.onclick = addTwentyGrids;
@@ -18,6 +19,11 @@ sixty.onclick = addSixtyGrids;
 seventy.onclick = addSeventyGrids;
 eighty.onclick = addEightyGrids;
 ninety.onclick = addNinetyGrids;
+reset.onclick = resetGrid;
+submitCustomValue.onclick = addCustomNumberGrids;
+submitCustomValue.addEventListener('click', function(event) {
+  event.preventDefault();
+})
 
 function addTenGrids() {
   if (mainDiv.innerHTML == '') {
@@ -100,8 +106,18 @@ function addNinetyGrids() {
   }
 }
 
+function addCustomNumberGrids() {
+  const inputValue = Number(document.getElementById('customInput').value)
+  if (mainDiv.innerHTML == '') {
+    addElements(inputValue)
+  } else {
+    mainDiv.innerHTML = '';
+    addElements(inputValue);
+  }
+}
 
-document.body.onload = addElements;
+
+// document.body.onload = addElements;
 const mainDiv = document.querySelector('.main-div');
 console.log(mainDiv)
 
