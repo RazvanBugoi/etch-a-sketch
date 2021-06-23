@@ -61,5 +61,36 @@ button, select {
 }
 
 form {
-    display: inline-block;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#customInputLabel { 
+    margin-right: 10px;
+}
+
+.resetContainer {
+    margin-left: 10px;
+}
+.colorsSection{
+    margin: 0.5rem auto;
+}
+
+.buttonsSameSize {
+    padding: 0.5rem
+}
+
+.colorsSection {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#selectColor {
+    padding: 0.3rem;
 }

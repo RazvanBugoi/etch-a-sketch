@@ -140,7 +140,22 @@ function resetGrid() {
 function startDrawing() {
   const allGridDivs = document.querySelectorAll('.div-grids')
   console.log(allGridDivs)
-  allGridDivs.forEach((element) => element.addEventListener('mouseenter', () => {
-    element.style.backgroundColor = 'black'
+  allGridDivs.forEach((element) => element.addEventListener('mouseenter', function randomColor() {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    let finalColor = "rgb(" + r + "," + g + "," + b + ")";
+    element.style.backgroundColor = finalColor;
   }))
+  // allGridDivs.forEach((element) => element.addEventListener('mouseenter', () => {
+  //   element.style.backgroundColor = 'black'
+  // }))
+}
+
+
+function randomColor() {
+  const r = Math.floor(Math.random() * 256);
+  const g = Math.floor(Math.random() * 256);
+  const b = Math.floor(Math.random() * 256);
+  let finalColor = "rgb(" + r + "," + g + "," + b + ")";
 }
