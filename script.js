@@ -116,6 +116,10 @@ function addNinetyGrids() {
 
 function addCustomNumberGrids() {
   const inputValue = Number(document.getElementById('customInput').value)
+  if (inputValue > 100) {
+    alert('Maximum number of grids is 100. Please select a lower number.')
+    return
+  } 
   if (mainDiv.innerHTML == '') {
     addElements(inputValue)
   } else {
