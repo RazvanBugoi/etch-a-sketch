@@ -6,12 +6,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-direction: column;
     margin: auto 2rem;
 }
 
 .main-div {
-    height: 60vh;
-    width: 40vw;
+    height: 1000px;
+    width: 1000px;
     border: 3px solid black;
     display: grid;
 }
@@ -20,10 +21,11 @@ body {
     width: 100%;
 }
 
-.drawingTools {
-    margin: 2rem;
-    width: 15vw;
-    height: 10vh;
+
+.presetValueText {
+    display: inline-block;
+    font-weight: bold;
+    margin-right: 1rem;
 }
 .presetValue {
     color: #fff;
@@ -46,8 +48,18 @@ button, select {
     text-transform: none;
 }
 
-button:hover {
+
+.presetValue:hover {
     color: #fff;
     background-color: #0b5ed7;
     border-color: #0a58ca;
+}
+
+.customValues, .submitContainer, .resetContainer {
+    display: inline-block;
+    margin: 0.5rem auto;
+}
+
+form {
+    display: inline-block;
 }
